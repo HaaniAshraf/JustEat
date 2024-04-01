@@ -11,7 +11,7 @@ const RestaurantCard = ({resData}) => {
         <h4>{resData.rating}</h4>
         <IoStar className="text-yellow-400 ml-1" />
       </div>
-      <h4 className='text-green-500'>{resData.time}</h4>
+      <h4 className='text-green-500'>Delivery in : {resData.time} min</h4>
     </div>
   )
 }
