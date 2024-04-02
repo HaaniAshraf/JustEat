@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from './components/Header';
-import Main from './components/Main';
+import Body from './components/Body';
 
 const AppLayout = () => {
   return(
     <div>
       <Header/>
-      <Main/>
+      <Body/>
     </div>
   )
 }

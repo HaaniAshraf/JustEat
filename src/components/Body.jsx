@@ -14,7 +14,7 @@ import RestaurantCard from './RestaurantCard'
 import { IoStar } from "react-icons/io5";
 
 
-const Main = () => {
+const Body = () => {
 
   const [restaurants,setRestaurants] = useState([
   { image: Kfc, resname: 'KFC', categories: 'Fries,Strips,Burgers', rating: 4, time: '25' },
@@ -41,7 +41,7 @@ const Main = () => {
          const filteredRes = restaurants.filter((restaurant) => restaurant.rating > 4 )
           setRestaurants(filteredRes)
         }} 
-        className='border-gray-300 border-2 hover:bg-red-100 hover:border-red-600 duration-200 rounded-lg p-1 mt-2 flex items-center justify-center font-semibold'>
+        className='filter-button'>
         <span>Above 4</span>
         <IoStar className="text-yellow-400 ml-1" />
         </button>
@@ -49,7 +49,7 @@ const Main = () => {
          const filteredRes = restaurants.filter((restaurant) => restaurant.rating > 3 )
           setRestaurants(filteredRes)
         }} 
-        className='border-gray-300 border-2 hover:bg-red-100 hover:border-red-600 duration-200 rounded-lg p-1 mt-2 flex items-center justify-center font-semibold'>
+        className='filter-button'>
         <span>Above 3</span>
         <IoStar className="text-yellow-400 ml-1" />
         </button>
@@ -57,7 +57,7 @@ const Main = () => {
          const filteredRes = restaurants.filter((restaurant) => restaurant.time < 30 )
           setRestaurants(filteredRes)
         }} 
-        className='border-gray-300 border-2 hover:bg-red-100 hover:border-red-600 duration-200 rounded-lg p-1 mt-2 flex items-center justify-center font-semibold'>
+        className='filter-button'>
         <span>Less than 30 min</span>
         </button>
         </div> 
@@ -73,4 +73,4 @@ const Main = () => {
 }
 
 
-export default Main
+export default Body
