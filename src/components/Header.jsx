@@ -1,6 +1,7 @@
 import React from 'react'
 import { IoSearch } from "react-icons/io5";
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = ({ datas,setRestaurants }) => {
   const [btnName,setBtnName] = useState('Login')
@@ -32,10 +33,10 @@ const Header = ({ datas,setRestaurants }) => {
       </div>
     <div>
       <ul className='sm:flex sm:text-sm hidden items-center justify-center sm:gap-4 sm:pr-2 md:gap-10 md:pr-10 font-semibold'>
-        <li className="nav-item">Home</li>
-        <li className="nav-item">About</li>
-        <li className="nav-item">Contact</li>
-        <li className="nav-item">Cart</li>
+          <Link to={'/'}><li className="nav-item">Home</li></Link> 
+          <Link to={"/about"}> <li className="nav-item">About</li></Link>
+          <Link to={'/contact'}><li className="nav-item">Contact</li></Link> 
+          <Link to={'/cart'}> <li className="nav-item">Cart</li></Link>
         <button className={`bg-gray-200 px-2 py-1 rounded-lg 
                           ${btnName === 'Login' ? 'text-green-600 hover:border-green-600' : 'text-red-600 hover:border-red-600 '}
                           hover:border-2 duration-100`}

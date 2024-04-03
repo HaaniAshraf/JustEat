@@ -7,8 +7,8 @@ const Body = ({ datas,restaurants,setRestaurants }) => {
 const resetFilters = () => {
   setRestaurants(datas)
 }
-
   return (
+    
     <div> 
       <div className='md:pt-28 pt-24 sm:pl-18 md:pl-20 pl-6'>
         <h5 className='sm:text-xl'>
