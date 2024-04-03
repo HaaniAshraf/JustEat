@@ -14,7 +14,7 @@ import Hollywood from './assets/foodImg/hollywood.png'
 import MomoLush from './assets/foodImg/momos.png'
 
 const App = () => {
-  const [restaurants,setRestaurants] = useState([
+  const datas = [
     { image: Kfc, resname: 'KFC', categories: 'Fries,Strips,Burgers', rating: 4, time: '25' },
     { image: Dominos, resname: 'Dominos', categories: 'Pizza,Burgers,Rolls', rating: 2, time: '40' },
     { image: BurgerLounge, resname: 'Burger Lounge', categories: 'Burgers,Ice-scream,Drinks', rating: 4.2, time: '35' },
@@ -25,12 +25,13 @@ const App = () => {
     { image: Starbucks, resname: 'Starbucks Coffee', categories: 'Beverages,Cafe', rating: 3, time: '23' },
     { image: Hollywood, resname: 'Hollywood', categories: 'Ice cream,Desserts', rating: 2.5, time: '20' },
     { image: MomoLush, resname: 'MOMO LUSH', categories: 'Chinese,Arabic', rating: 3.8, time: '15' },
-  ])  
+  ]
+  const [restaurants, setRestaurants] = useState(datas)  
 
   return(
     <div>
-      <Header restaurants={restaurants} setRestaurants={setRestaurants}/>
-      <Body restaurants={restaurants} setRestaurants={setRestaurants}/>
+      <Header datas={datas} restaurants={restaurants} setRestaurants={setRestaurants}/>
+      <Body datas={datas} restaurants={restaurants} setRestaurants={setRestaurants}/>
     </div>
 
   )

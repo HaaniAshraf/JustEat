@@ -2,13 +2,18 @@ import React from 'react'
 import { IoSearch } from "react-icons/io5";
 import { useState } from 'react';
 
-const Header = ({ restaurants,setRestaurants }) => {
+const Header = ({ datas,setRestaurants }) => {
   const [btnName,setBtnName] = useState('Login')
   const [searchText,setSearchText] = useState("")
   
   const handleSearch = () => {
-    const searchedRes = restaurants.filter((res) => res.resname.toLowerCase().includes(searchText.toLowerCase()));
+    const searchedRes = datas.filter((res) => res.resname.toLowerCase().includes(searchText.toLowerCase()));
     setRestaurants(searchedRes);
+  };
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
   };
   return (
 
@@ -18,9 +23,9 @@ const Header = ({ restaurants,setRestaurants }) => {
       <h2 className='md:text-3xl text-2xl font-bold'>JustEat</h2>
     </div>
       <div className='w-1/2 sm:w-1/3 relative h-9'>
-       <input type="text" value={searchText} onChange={(e) => {
-        setSearchText(e.target.value)
-       }}
+       <input type="text" value={searchText} 
+        onChange={(e) => { setSearchText(e.target.value) }}
+        onKeyDown={handleKeyDown}
         className='w-full sm:w-full sm:ml-1 pl-2 h-full rounded-md bg-gray-200 placeholder-pl-2 placeholder-ml-2' placeholder='Search' />
        <IoSearch onClick={ handleSearch }
         className='cursor-pointer absolute inset-y-0 right-7 sm:right-1 md:right-1 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-red-600'/>

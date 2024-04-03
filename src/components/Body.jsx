@@ -1,8 +1,12 @@
 import React from 'react'
 import RestaurantCard from './RestaurantCard'
 import { IoStar } from "react-icons/io5";
+import { MdOutlineClear } from "react-icons/md";
 
-const Body = ({ restaurants,setRestaurants }) => {
+const Body = ({ datas,restaurants,setRestaurants }) => {
+const resetFilters = () => {
+  setRestaurants(datas)
+}
 
   return (
     <div> 
@@ -34,10 +38,15 @@ const Body = ({ restaurants,setRestaurants }) => {
         className='filter-button'>
         <span>Less than 30 min</span>
         </button>
+        <button onClick={resetFilters}
+         className='h-1/3 mt-2 flex items-center justify-center gap-2 p-1 font-semibold border-red-200 border-2 rounded-lg hover:bg-gray-100 hover:text-red-600 duration-200'>
+          <span>Reset</span>
+          <MdOutlineClear/>
+        </button>
         </div> 
       </div>
 
-      <div className='flex flex-wrap gap-10 w-full h-full items-center pl-32 md:pl-20 pt-16 pb-24'>
+      <div className='flex flex-wrap gap-10 w-full h-full items-center justify-start pl-32 md:pl-20 pt-16 pb-24'>
         {restaurants.map((res,index) => (
           <RestaurantCard key={index} resData={res}/>
         ))}
