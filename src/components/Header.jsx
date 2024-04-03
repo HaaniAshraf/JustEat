@@ -1,11 +1,13 @@
 import React from 'react'
+import Logo from '../assets/justEat.png'
 import { IoSearch } from "react-icons/io5";
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useLocation  } from 'react-router-dom';
 
 const Header = ({ datas,setRestaurants }) => {
   const [btnName,setBtnName] = useState('Login')
   const [searchText,setSearchText] = useState("")
+  const location = useLocation();
   
   const handleSearch = () => {
     const searchedRes = datas.filter((res) => res.resname.toLowerCase().includes(searchText.toLowerCase()));
@@ -20,7 +22,7 @@ const Header = ({ datas,setRestaurants }) => {
 
     <div className='flex items-center py-4 px-1 justify-between fixed border-gray-200 border-b-2 w-full z-10 bg-white'>
     <div className='flex items-center justify-center'>
-      <img src="src/assets/justEat.png" alt="" className='md:h-14 h-12 sm:pl-6' />
+      <img src={Logo} alt="" className='md:h-14 h-12 sm:pl-6' />
       <h2 className='md:text-3xl text-2xl font-bold'>JustEat</h2>
     </div>
       <div className='w-1/2 sm:w-1/3 relative h-9'>
@@ -33,10 +35,10 @@ const Header = ({ datas,setRestaurants }) => {
       </div>
     <div>
       <ul className='sm:flex sm:text-sm hidden items-center justify-center sm:gap-4 sm:pr-2 md:gap-10 md:pr-10 font-semibold'>
-          <Link to={'/'}><li className="nav-item">Home</li></Link> 
-          <Link to={"/about"}> <li className="nav-item">About</li></Link>
-          <Link to={'/contact'}><li className="nav-item">Contact</li></Link> 
-          <Link to={'/cart'}> <li className="nav-item">Cart</li></Link>
+          <Link to={'/'}><li className={location.pathname === '/' ? 'active-link' : 'nav-item'}>Home</li></Link> 
+          <Link to={'/about'}> <li className={location.pathname === '/about' ? 'active-link' : 'nav-item'}>About</li></Link>
+          <Link to={'/contact'}><li className={location.pathname === '/contact' ? 'active-link' : 'nav-item'}>Contact</li></Link> 
+          <Link to={'/cart'}> <li className={location.pathname === '/cart' ? 'active-link' : 'nav-item'}>Cart</li></Link>
         <button className={`bg-gray-200 px-2 py-1 rounded-lg 
                           ${btnName === 'Login' ? 'text-green-600 hover:border-green-600' : 'text-red-600 hover:border-red-600 '}
                           hover:border-2 duration-100`}
