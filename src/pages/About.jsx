@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
+import Footer from '../components/Footer';
 
 const About = () => {
   return (
@@ -7,6 +8,7 @@ const About = () => {
       <Header/>
       <h1 className='pt-24'>About</h1>
       <h3>This is JustEat</h3>
+      <Footer/>
     </div>
   )
 }

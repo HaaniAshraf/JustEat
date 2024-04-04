@@ -5,11 +5,15 @@ import { useState } from 'react';
 import { Link,useLocation  } from 'react-router-dom';
 
 const Header = ({ datas,setRestaurants }) => {
+  // Initializing state for button name with 'Login' as default value
   const [btnName,setBtnName] = useState('Login')
+   // Initializing state for search text with empty string as default value
   const [searchText,setSearchText] = useState("")
+   // Getting the current location using useLocation hook from react-router-dom
   const location = useLocation();
   
   const handleSearch = () => {
+    // Filtering datas based on search text
     const searchedRes = datas.filter((res) => res.resname.toLowerCase().includes(searchText.toLowerCase()));
     setRestaurants(searchedRes);
   };

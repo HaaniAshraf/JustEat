@@ -3,8 +3,10 @@ import { useNavigate  } from 'react-router-dom';
 import { IoStar } from "react-icons/io5";
 
 const RestaurantCard = ({resData}) => {
+  // Getting the navigate function using useNavigate hook
   const navigate  = useNavigate();
   const handleClick = () => {
+    // Navigating to the specific restaurant page with restaurant data passed as state
     navigate(`/restaurant/${resData.resname}`, { state: { restaurantData: resData } });
   };
   return (

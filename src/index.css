@@ -17,7 +17,7 @@
   }
 
   .coupon{
-    @apply flex items-center border-gray-200 border-2 rounded-2xl p-3 gap-4
+    @apply flex items-center border-gray-300 border-2 rounded-2xl p-3 gap-4
   }
   .coupon-head{
     @apply text-xl font-bold
