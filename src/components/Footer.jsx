@@ -12,12 +12,12 @@ const Footer = () => {
                <h2 className='text-gray-800 font-bold sm:text-xl md:text-2xl w-2/3'>For better experience,download <br /> the JustEat app now</h2> 
             </div>
             <div className='flex gap-5 w-1/3 justify-center'>
-                <div className='bg-black text-white p-3 rounded-xl flex items-center justify-center gap-2 sm:h-20 sm:text-xs md:text-base'>
-                    <div className=''><img src={Gplay} alt="" className='h-auto w-auto max-h-7 sm:max-h-10 max-w-20' /></div>
+                <div className='footer-app'>
+                    <div className=''><img src={Gplay} alt="" className='footer-img' /></div>
                     <div className='hidden sm:block'>Get it on <br /> <span className='font-bold'>Google Play</span></div>
                 </div>
-                <div className='bg-black text-white p-3 rounded-xl flex items-center justify-center gap-2 sm:h-20 sm:text-xs md:text-base'>
-                    <div className=''><img src={Apple} alt="" className='h-auto w-auto max-h-7 sm:max-h-10 max-w-20' /></div>
+                <div className='footer-app'>
+                    <div className=''><img src={Apple} alt="" className='footer-img' /></div>
                     <div className='hidden sm:block'>Download from <br /> <span className='font-bold'>App Store</span></div>
                 </div>
             </div>

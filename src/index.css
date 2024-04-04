@@ -26,5 +26,11 @@
     @apply text-gray-400
   }
   
+  .footer-app{
+    @apply bg-black text-white p-3 rounded-xl flex items-center justify-center gap-2 sm:h-20 sm:text-xs md:text-base
+  }
+  .footer-img{
+    @apply h-auto w-auto max-h-7 sm:max-h-10 max-w-20
+  }
   
 }
