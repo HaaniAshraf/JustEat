@@ -7,25 +7,25 @@ const Footer = () => {
 
     <div>
 
-        <div className='bg-gray-200 flex justify-center items-center py-5 gap-8 px-20'>
+        <div className='bg-gray-200 flex justify-center items-center py-5 gap-2 sm:gap-8 px-5 sm:px-20'>
             <div>
-               <h2 className='text-gray-800 font-bold text-2xl w-2/3'>For better experience,download <br /> the JustEat app now</h2> 
+               <h2 className='text-gray-800 font-bold sm:text-xl md:text-2xl w-2/3'>For better experience,download <br /> the JustEat app now</h2> 
             </div>
             <div className='flex gap-5 w-1/3 justify-center'>
-                <div className='bg-black text-white p-3 rounded-xl flex items-center justify-center gap-2'>
-                    <div className=''><img src={Gplay} alt="" className='h-auto w-auto max-h-12 max-w-20' /></div>
-                    <div>Get it on <br /> <span className='font-bold'>Google Play</span></div>
+                <div className='bg-black text-white p-3 rounded-xl flex items-center justify-center gap-2 sm:h-20 sm:text-xs md:text-base'>
+                    <div className=''><img src={Gplay} alt="" className='h-auto w-auto max-h-7 sm:max-h-10 max-w-20' /></div>
+                    <div className='hidden sm:block'>Get it on <br /> <span className='font-bold'>Google Play</span></div>
                 </div>
-                <div className='bg-black text-white p-3 rounded-xl flex items-center justify-center gap-2'>
-                    <div className=''><img src={Apple} alt="" className='h-auto w-auto max-h-12 max-w-20' /></div>
-                    <div>Download from <br /> <span className='font-bold'>App Store</span></div>
+                <div className='bg-black text-white p-3 rounded-xl flex items-center justify-center gap-2 sm:h-20 sm:text-xs md:text-base'>
+                    <div className=''><img src={Apple} alt="" className='h-auto w-auto max-h-7 sm:max-h-10 max-w-20' /></div>
+                    <div className='hidden sm:block'>Download from <br /> <span className='font-bold'>App Store</span></div>
                 </div>
             </div>
         </div>
 
         <div className="bg-gray-600 text-white py-8">
             <div className="container mx-auto px-4">
-                <div className="flex flex-wrap justify-between pl-28">
+                <div className="flex flex-wrap justify-between pl-28 sm:gap-8 md:gap-0">
                     <div className="w-full md:w-1/4">
                         <h3 className="text-xl font-semibold mb-4">JustEat</h3>
                         <p>© 2024 Bundl Technologies Pvt. Ltd</p>
