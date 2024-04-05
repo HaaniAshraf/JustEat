@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import User from '../assets/user.png'
+import Shimmer from "./Shimmer";
 
 class UserCard extends Component {
   constructor(props) {
@@ -36,6 +36,11 @@ class UserCard extends Component {
 
   render() {
     const { usersInfo } = this.state;
+
+    if(usersInfo.length === 0) {
+      return <Shimmer/>
+    }
+
     return (
       <div className="pt-24 pb-44 px-36">
         <div>
