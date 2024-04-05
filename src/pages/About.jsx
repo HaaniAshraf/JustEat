@@ -9,7 +9,7 @@ class About extends Component {
     return (
       <div>
         <Header />
-        <UserCard usernames={['HaaniAshraf','yadukrishnan0']} />
+        <UserCard usernames={["HaaniAshraf", "yadukrishnan0"]} />
         <Footer />
       </div>
     );
