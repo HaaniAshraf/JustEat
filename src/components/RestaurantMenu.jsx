@@ -3,6 +3,7 @@ import { IoStar } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import Coupon1 from "../assets/coupons/coupon1.jpg";
 import Coupon2 from "../assets/coupons/coupon2.jpg";
+import DishAccordion from "./DishAccordion";
 
 const RestaurantMenu = ({ restaurantData }) => {
   return (
@@ -83,6 +84,12 @@ const RestaurantMenu = ({ restaurantData }) => {
           ))}
         </div>
       </div>
+
+      <div className="mt-20 flex flex-col gap-7">
+        <DishAccordion title="Recommended" dishes={restaurantData.dishes} />
+        <DishAccordion title="Popular" dishes={restaurantData.dishes} />
+      </div>
+
     </div>
   );
 };

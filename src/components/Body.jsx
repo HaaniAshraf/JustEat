@@ -12,9 +12,9 @@ const Body = ({ datas, restaurants, setRestaurants }) => {
   const onlineStatus = useOnlineStatus();
   if (onlineStatus == false) {
     return (
-      <div className="pt-24 pb-36">
-        <h1>Looks like you are Offline</h1>
-        <h2>Check your internet connection</h2>
+      <div className="flex flex-col items-center justify-center pt-36 pb-36">
+        <h1 className="font-semibold text-xl">Looks like you are Offline...</h1>
+        <h2 className="text-gray-600">Check your internet connection!!</h2>
       </div>
     );
   }
@@ -73,7 +73,7 @@ const Body = ({ datas, restaurants, setRestaurants }) => {
 
       <div className="flex flex-wrap gap-10 w-full h-full items-center justify-start pl-32 md:pl-20 pt-16 pb-24">
         {restaurants.map((res, index) => (
-          res.promoted ? <RestaurantCardPromoted key={index} resData={res}/> : <RestaurantCard key={index} resData={res} />
+          res.popular ? <RestaurantCardPromoted key={index} resData={res}/> : <RestaurantCard key={index} resData={res} />
         ))}
       </div>
     </div>
