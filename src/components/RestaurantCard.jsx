@@ -32,4 +32,16 @@ const RestaurantCard = ({ resData }) => {
   );
 };
 
+// Higher Order Component
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="z-10 rounded-md translate-y-1 translate-x-1 text-xs absolute bg-gray-800 text-white m-2 p-1">Promoted</label>
+        <RestaurantCard {...props}/>
+      </div>
+    )
+  }
+}
+
 export default RestaurantCard;

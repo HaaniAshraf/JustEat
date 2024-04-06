@@ -1,5 +1,5 @@
 import React from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard,{withPromotedLabel} from "./RestaurantCard";
 import { IoStar } from "react-icons/io5";
 import { MdOutlineClear } from "react-icons/md";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -18,6 +18,8 @@ const Body = ({ datas, restaurants, setRestaurants }) => {
       </div>
     );
   }
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard)
 
   return (
     <div>
@@ -71,7 +73,7 @@ const Body = ({ datas, restaurants, setRestaurants }) => {
 
       <div className="flex flex-wrap gap-10 w-full h-full items-center justify-start pl-32 md:pl-20 pt-16 pb-24">
         {restaurants.map((res, index) => (
-          <RestaurantCard key={index} resData={res} />
+          res.promoted ? <RestaurantCardPromoted key={index} resData={res}/> : <RestaurantCard key={index} resData={res} />
         ))}
       </div>
     </div>

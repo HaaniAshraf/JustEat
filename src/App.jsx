@@ -6,6 +6,7 @@ import Cart from "./pages/Cart";
 import Error from "./components/Error";
 import RestaurantInfo from "./pages/RestaurantInfo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UserLayout from "./layout/userLayout";
 
 const Grocery = lazy(() => import('./components/Grocery'))
 
@@ -13,13 +14,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<Error />} />
-        <Route path="/grocery" element={<Suspense fallback={<h1>Loading screen</h1>}><Grocery /></Suspense>} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/restaurant/:resId" element={<RestaurantInfo />} />
+        <Route path="/" element={<UserLayout/>}>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Error />} />
+          <Route path="/grocery" element={<Suspense fallback={<h1>Loading screen</h1>}><Grocery /></Suspense>} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/restaurant/:resId" element={<RestaurantInfo />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

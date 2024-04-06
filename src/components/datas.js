@@ -62,6 +62,7 @@ const datas = [
     categories: "Pizza,Burgers,Rolls",
     rating: 2,
     time: "40",
+    promoted:true,
     outlet: "Hi-Lite Mall",
     dishes: [
       { name: "Pepper Barbecue Chicken", image: Dominos1, price: 449, rating: 4 },
@@ -101,6 +102,7 @@ const datas = [
     categories: "Biriyani,South Indian",
     rating: 4.6,
     time: "30",
+    promoted:true,
     outlet: "Kuttichira",
     dishes: [
       { name: "Chicken Biriyani (Thalassery)", image: Kbc1, price: 169, rating: 4.1 },
@@ -140,6 +142,7 @@ const datas = [
     categories: "Beverages,Cafe",
     rating: 3,
     time: "23",
+    promoted:true,
     outlet: "Olavanna",
     dishes: [
       { name: "Picco Filter Coffee", image: Starbucks1, price: 185, rating: 4 },
