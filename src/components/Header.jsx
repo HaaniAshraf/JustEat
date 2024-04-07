@@ -75,7 +75,7 @@ const Header = ({ datas, setRestaurants }) => {
             >
               <div className="flex items-center gap-2 relative">
                 <IoCartSharp />
-                <span className="absolute -top-2 left-3 bg-red-600 h-3 w-3 rounded-full flex items-center justify-center text-white text-xs">
+                <span className="absolute -top-2 left-3 bg-red-600 h-3 w-3 rounded-full flex items-center justify-center text-white text-xxs">
                   {cartItems.length}
                 </span>
               </div>

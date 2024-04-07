@@ -6,12 +6,16 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 
 const DishAccordion = ({ title, dishes }) => {
+  // State to manage whether to show the items or not
   const [showItems, setShowItems] = useState(false);
+  // Function to handle click event and toggle showItems state
   const handleClick = () => {
     setShowItems(!showItems);
   };
 
+  // Initializing dispatch function to dispatch actions
   const dispatch = useDispatch();
+  // Function to handle adding an item to the cart
   const handleAddItem = (dish) => {
     dispatch(addItem(dish));
   };

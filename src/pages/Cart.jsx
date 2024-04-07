@@ -7,9 +7,12 @@ import { clearCart } from "../utils/cartSlice";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
+  // Fetching cart items from the Redux store
   const cartItems = useSelector((store) => store.cart.items);
+  // Initializing dispatch function to dispatch actions
   const dispatch = useDispatch();
 
+  // Function to handle clearing the cart
   const handleClearCart = () => {
     dispatch(clearCart());
   };
@@ -39,7 +42,7 @@ const Cart = () => {
           </button>
           <div className="mt-8 grid sm:grid-cols-2 sm:px-16 md:grid-cols-4 items-center justify-center gap-8">
             {cartItems.map((dish, index) => (
-              <DishesCard className="bg-red-300" key={index} dish={dish} />
+              <DishesCard key={index} dish={dish} showRemoveButton={true} />
             ))}
           </div>
         </React.Fragment>
