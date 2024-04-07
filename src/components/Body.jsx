@@ -4,7 +4,7 @@ import { IoStar } from "react-icons/io5";
 import { MdOutlineClear } from "react-icons/md";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
-const Body = ({ datas, restaurants, setRestaurants }) => {
+const Body = ({ datas, restaurants, setRestaurants, searchText }) => {
   const resetFilters = () => {
     setRestaurants(datas);
   };
