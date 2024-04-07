@@ -2,11 +2,18 @@ import React from "react";
 import { IoIosArrowDropdown } from "react-icons/io";
 import { IoStar } from "react-icons/io5";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const DishAccordion = ({ title, dishes }) => {
   const [showItems, setShowItems] = useState(false);
   const handleClick = () => {
     setShowItems(!showItems);
+  };
+
+  const dispatch = useDispatch();
+  const handleAddItem = (dish) => {
+    dispatch(addItem(dish));
   };
 
   return (
@@ -43,7 +50,10 @@ const DishAccordion = ({ title, dishes }) => {
                 <div className="w-32 flex items-center justify-center">
                   <img src={dish.image} alt={dish.name} />
                   <div className="relative">
-                    <button className="bg-black hover:bg-gray-700 absolute right-10 top-5 text-white px-2 m-auto rounded-md">
+                    <button
+                      onClick={() => handleAddItem(dish)}
+                      className="bg-black hover:bg-gray-700 absolute right-10 top-5 text-white px-2 m-auto rounded-md"
+                    >
                       Add
                     </button>
                   </div>

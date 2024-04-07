@@ -3,6 +3,7 @@ import Logo from "../assets/justEat.png";
 import { IoSearch } from "react-icons/io5";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { MdOutlineWifi } from "react-icons/md";
 import { MdOutlineWifiOff } from "react-icons/md";
@@ -29,6 +30,8 @@ const Header = ({ datas, setRestaurants }) => {
       handleSearch();
     }
   };
+
+  const cartItems = useSelector((store) => store.cart.items);
 
   const onlineStatus = useOnlineStatus();
 
@@ -70,16 +73,12 @@ const Header = ({ datas, setRestaurants }) => {
                 location.pathname === "/cart" ? "active-link" : "nav-item"
               }
             >
-              <IoCartSharp />
-            </li>
-          </Link>
-          <Link to={"/grocery"}>
-            <li
-              className={
-                location.pathname === "/grocery" ? "active-link" : "nav-item"
-              }
-            >
-              Grocery
+              <div className="flex items-center gap-2 relative">
+                <IoCartSharp />
+                <span className="absolute -top-2 left-3 bg-red-600 h-3 w-3 rounded-full flex items-center justify-center text-white text-xs">
+                  {cartItems.length}
+                </span>
+              </div>
             </li>
           </Link>
           <Link to={"/about"}>

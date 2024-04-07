@@ -4,6 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import Coupon1 from "../assets/coupons/coupon1.jpg";
 import Coupon2 from "../assets/coupons/coupon2.jpg";
 import DishAccordion from "./DishAccordion";
+import DishesCard from "./DishesCard";
 
 const RestaurantMenu = ({ restaurantData }) => {
   return (
@@ -61,26 +62,9 @@ const RestaurantMenu = ({ restaurantData }) => {
             Our Menu
           </h2>
         </div>
-        <div className="mt-8 flex flex-col gap-10 sm:grid sm:grid-cols-2 md:mt-12 md:grid md:grid-cols-3 md:px-20 md:gap-20">
+        <div className="mt-12 flex flex-col gap-10 sm:grid sm:grid-cols-2 md:mt-12 md:grid md:grid-cols-3 md:px-20 md:gap-20">
           {restaurantData.dishes.map((dish, index) => (
-            <div
-              className="flex flex-col justify-center items-center hover:shadow-md border-2 border-gray-300 rounded-lg py-4 cursor-pointer"
-              key={index}
-            >
-              <div className="w-3/4 items-center justify-center">
-                <img
-                  className="p-5 hover:scale-110 duration-200 w-full"
-                  src={dish.image}
-                  alt={dish.name}
-                />
-              </div>
-              <h3 className="text-xl font-semibold">{dish.name}</h3>
-              <p className="font-bold text-green-600">₹ {dish.price}</p>
-              <div className="flex items-center">
-                <h2>Rating : {dish.rating}</h2>
-                <IoStar className="text-yellow-400 ml-1" />
-              </div>
-            </div>
+            <DishesCard key={index} dish={dish} />
           ))}
         </div>
       </div>
@@ -89,7 +73,6 @@ const RestaurantMenu = ({ restaurantData }) => {
         <DishAccordion title="Recommended" dishes={restaurantData.dishes} />
         <DishAccordion title="Popular" dishes={restaurantData.dishes} />
       </div>
-
     </div>
   );
 };
