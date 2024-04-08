@@ -5,7 +5,7 @@
 
 @layer components {
   .nav-item {
-    @apply cursor-pointer hover:text-red-600 duration-100 md:text-xl;
+    @apply cursor-pointer hover:text-red-600 duration-100 md:text-xl flex flex-col items-center justify-center md:leading-5;
   }
 
   .filter-button{

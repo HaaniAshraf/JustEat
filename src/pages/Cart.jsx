@@ -26,7 +26,7 @@ const Cart = () => {
           <p>Your cart is empty</p>
           <p>Please add items...</p>
           <Link to="/">
-            <button className="mt-4 border-gray-200 bg-red-500 hover:border-red-600 border-2 text-black hover:bg-white font-bold py-2 px-4 rounded">
+            <button className="mt-4 border-red-600 hover:bg-red-500 hover:border-red-600 hover:text-white border-2 text-black font-bold py-2 px-4 rounded">
               Back to Home
             </button>
           </Link>

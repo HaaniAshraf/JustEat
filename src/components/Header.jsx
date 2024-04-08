@@ -5,16 +5,23 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import { MdOutlineWifi } from "react-icons/md";
-import { MdOutlineWifiOff } from "react-icons/md";
-import { TiHome } from "react-icons/ti";
-import { IoCartSharp } from "react-icons/io5";
+import { MdOutlineWifi, MdOutlineWifiOff, MdOutlineHome } from "react-icons/md";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { BsInfoCircle } from "react-icons/bs";
+import { RiContactsBook2Line } from "react-icons/ri";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = ({ datas, setRestaurants }) => {
   // Initializing state for button name with 'Login' as default value
   const [btnName, setBtnName] = useState("Login");
   // Initializing state for search text with empty string as default value
   const [searchText, setSearchText] = useState("");
+  // State to manage whether the mobile navigation menu is open or closed
+  const [nav, setNav] = useState(false);
+  const closeNav = () => {
+    setNav(false);
+  };
+
   // Getting the current location using useLocation hook from react-router-dom
   const location = useLocation();
 
@@ -58,12 +65,15 @@ const Header = ({ datas, setRestaurants }) => {
         />
       </div>
       <div>
-        <ul className="sm:flex sm:text-sm hidden items-center justify-center sm:gap-4 sm:pr-1 md:gap-8 font-semibold">
+        <ul className="sm:flex sm:text-xl hidden items-center justify-center sm:gap-6 sm:pr-1 md:gap-8 font-semibold">
           <Link to={"/"}>
             <li
               className={location.pathname === "/" ? "active-link" : "nav-item"}
             >
-              <TiHome />
+              <div>
+                <MdOutlineHome className="sm:block md:hidden" />
+              </div>
+              <span className="sm:hidden md:block">Home</span>
             </li>
           </Link>
           <Link to={"/cart"}>
@@ -74,11 +84,14 @@ const Header = ({ datas, setRestaurants }) => {
               }
             >
               <div className="flex items-center gap-2 relative">
-                <IoCartSharp />
-                <span className="absolute -top-2 left-3 bg-red-600 h-3 w-3 rounded-full flex items-center justify-center text-white text-xxs">
+                <div className="sm:block md:hidden">
+                  <AiOutlineShoppingCart />
+                </div>
+                <span className="absolute -top-2 md:-top-2 left-3 bg-red-600 h-3 w-3 md:h-4 md:w-4 md:text-xs rounded-full flex items-center justify-center text-white text-xxs">
                   {cartItems.length}
                 </span>
               </div>
+              <span className="sm:hidden md:block">Cart</span>
             </li>
           </Link>
           <Link to={"/about"}>
@@ -88,7 +101,10 @@ const Header = ({ datas, setRestaurants }) => {
                 location.pathname === "/about" ? "active-link" : "nav-item"
               }
             >
-              About
+              <div>
+                <BsInfoCircle className="sm:block md:hidden" />
+              </div>
+              <span className="sm:hidden md:block">About</span>
             </li>
           </Link>
           <Link to={"/contact"}>
@@ -97,11 +113,14 @@ const Header = ({ datas, setRestaurants }) => {
                 location.pathname === "/contact" ? "active-link" : "nav-item"
               }
             >
-              Contact
+              <div className="sm:block md:hidden">
+                <RiContactsBook2Line />
+              </div>
+              <span className="sm:hidden md:block">Contact</span>
             </li>
           </Link>
           <button
-            className={`bg-gray-200 px-2 py-1 rounded-lg 
+            className={`bg-gray-200 px-2 py-1 rounded-lg sm:text-xs
                           ${
                             btnName === "Login"
                               ? "text-green-600 hover:border-green-600"
@@ -122,6 +141,44 @@ const Header = ({ datas, setRestaurants }) => {
             )}
           </li>
         </ul>
+        <div className="sm:hidden">
+          <button
+            onClick={() => setNav(!nav)}
+            className="text-3xl pr-2 pt-2 text-gray-500"
+          >
+            {nav ? <FaTimes /> : <FaBars />}
+          </button>
+          {nav && (
+            <ul className="flex flex-col items-center justify-center bg-white absolute top-16 left-0 w-full py-4 border-b border-gray-200">
+              <li className="my-2">
+                <Link to={"/"} onClick={closeNav} className="text-gray-800 hover:text-red-600 font-semibold text-xl">
+                  Home
+                </Link>
+              </li>
+              <li className="my-2">
+                <Link to={"/cart"} onClick={closeNav} className="text-gray-800 hover:text-red-600 font-semibold text-xl">
+                  Cart
+                </Link>
+              </li>
+              <li className="my-2">
+                <Link
+                  to={"/about"} onClick={closeNav}
+                  className="text-gray-800 hover:text-red-600 font-semibold text-xl"
+                >
+                  About
+                </Link>
+              </li>
+              <li className="my-2">
+                <Link
+                  to={"/contact"} onClick={closeNav}
+                  className="text-gray-800 hover:text-red-600 font-semibold text-xl"
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );

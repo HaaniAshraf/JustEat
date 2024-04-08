@@ -16,7 +16,8 @@ const DishAccordion = ({ title, dishes }) => {
   // Initializing dispatch function to dispatch actions
   const dispatch = useDispatch();
   // Function to handle adding an item to the cart
-  const handleAddItem = (dish) => {
+  const handleAddItem = (dish,event) => {
+    event.stopPropagation()
     dispatch(addItem(dish));
   };
 
@@ -55,7 +56,7 @@ const DishAccordion = ({ title, dishes }) => {
                   <img src={dish.image} alt={dish.name} />
                   <div className="relative">
                     <button
-                      onClick={() => handleAddItem(dish)}
+                      onClick={(event) => handleAddItem(dish,event)}
                       className="bg-black hover:bg-gray-700 absolute right-10 top-5 text-white px-2 m-auto rounded-md"
                     >
                       Add
