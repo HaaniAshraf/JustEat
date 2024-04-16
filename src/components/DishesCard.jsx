@@ -3,13 +3,13 @@ import { IoStar } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { removeItem } from "../utils/cartSlice";
 
-const DishesCard = ({ dish, showRemoveButton }) => {
+const DishesCard = ({ dishIndex, dish, showRemoveButton }) => {
   // Initializing dispatch function to dispatch actions
   const dispatch = useDispatch();
 
   // Function to handle removing the item
   const handleRemoveItem = () => {
-    dispatch(removeItem(dish));
+    dispatch(removeItem(dishIndex));
   };
 
   return (

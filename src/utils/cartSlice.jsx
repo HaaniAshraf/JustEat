@@ -14,8 +14,9 @@ const cartSlice = createSlice({
       // Push the payload (new item) into the items array in the state
       state.items.push(action.payload);
     },
-    removeItem: (state,action) => {
-      state.items.splice(action.payload,1)
+    removeItem: (state, action) => {
+      const indexToRemove = action.payload;
+      state.items.splice(indexToRemove, 1);
     },
     clearCart: (state) => {
       state.items.length = 0;
