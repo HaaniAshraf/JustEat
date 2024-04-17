@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { MdOutlineWifi, MdOutlineWifiOff, MdOutlineHome } from "react-icons/md";
+import { HiOutlineShoppingBag } from "react-icons/hi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
 import { RiContactsBook2Line } from "react-icons/ri";
@@ -74,6 +75,16 @@ const Header = ({ datas, setRestaurants }) => {
                 <MdOutlineHome className="sm:block md:hidden" />
               </div>
               <span className="sm:hidden md:block">Home</span>
+            </li>
+          </Link>
+          <Link to={"/grocery"}>
+            <li
+              className={location.pathname === "/grocery" ? "active-link" : "nav-item"}
+            >
+              <div>
+                <HiOutlineShoppingBag className="sm:block md:hidden" />
+              </div>
+              <span className="sm:hidden md:block">Grocery</span>
             </li>
           </Link>
           <Link to={"/cart"}>
@@ -153,6 +164,11 @@ const Header = ({ datas, setRestaurants }) => {
               <li className="my-2">
                 <Link to={"/"} onClick={closeNav} className="text-gray-800 hover:text-red-600 font-semibold text-xl">
                   Home
+                </Link>
+              </li>
+              <li className="my-2">
+                <Link to={"/grocery"} onClick={closeNav} className="text-gray-800 hover:text-red-600 font-semibold text-xl">
+                  Grocery
                 </Link>
               </li>
               <li className="my-2">
