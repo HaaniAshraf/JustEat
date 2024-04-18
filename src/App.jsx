@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import Home from "./pages/Home";
+import Signup from "./pages/Signup";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
@@ -17,6 +18,7 @@ function App() {
     <Provider store={appStore}>
       <BrowserRouter>
         <Routes>
+          <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<UserLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<Error />} />

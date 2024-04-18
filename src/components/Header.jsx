@@ -13,8 +13,6 @@ import { RiContactsBook2Line } from "react-icons/ri";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = ({ datas, setRestaurants }) => {
-  // Initializing state for button name with 'Login' as default value
-  const [btnName, setBtnName] = useState("Login");
   // Initializing state for search text with empty string as default value
   const [searchText, setSearchText] = useState("");
   // State to manage whether the mobile navigation menu is open or closed
@@ -79,7 +77,9 @@ const Header = ({ datas, setRestaurants }) => {
           </Link>
           <Link to={"/grocery"}>
             <li
-              className={location.pathname === "/grocery" ? "active-link" : "nav-item"}
+              className={
+                location.pathname === "/grocery" ? "active-link" : "nav-item"
+              }
             >
               <div>
                 <HiOutlineShoppingBag className="sm:block md:hidden" />
@@ -130,20 +130,6 @@ const Header = ({ datas, setRestaurants }) => {
               <span className="sm:hidden md:block">Contact</span>
             </li>
           </Link>
-          <button
-            className={`bg-gray-200 px-2 py-1 rounded-lg sm:text-xs
-                          ${
-                            btnName === "Login"
-                              ? "text-green-600 hover:border-green-600"
-                              : "text-red-600 hover:border-red-600 "
-                          }
-                          hover:border-2 duration-100`}
-            onClick={() => {
-              btnName == "Login" ? setBtnName("Logout") : setBtnName("Login");
-            }}
-          >
-            {btnName}
-          </button>
           <li className={`${onlineStatus ? "text-green-500" : "text-red-600"}`}>
             {onlineStatus ? (
               <MdOutlineWifi className="md:text-xl" />
@@ -162,23 +148,36 @@ const Header = ({ datas, setRestaurants }) => {
           {nav && (
             <ul className="flex flex-col items-center justify-center bg-white absolute top-16 left-0 w-full py-4 border-b border-gray-200">
               <li className="my-2">
-                <Link to={"/"} onClick={closeNav} className="text-gray-800 hover:text-red-600 font-semibold text-xl">
+                <Link
+                  to={"/"}
+                  onClick={closeNav}
+                  className="text-gray-800 hover:text-red-600 font-semibold text-xl"
+                >
                   Home
                 </Link>
               </li>
               <li className="my-2">
-                <Link to={"/grocery"} onClick={closeNav} className="text-gray-800 hover:text-red-600 font-semibold text-xl">
+                <Link
+                  to={"/grocery"}
+                  onClick={closeNav}
+                  className="text-gray-800 hover:text-red-600 font-semibold text-xl"
+                >
                   Grocery
                 </Link>
               </li>
               <li className="my-2">
-                <Link to={"/cart"} onClick={closeNav} className="text-gray-800 hover:text-red-600 font-semibold text-xl">
+                <Link
+                  to={"/cart"}
+                  onClick={closeNav}
+                  className="text-gray-800 hover:text-red-600 font-semibold text-xl"
+                >
                   Cart
                 </Link>
               </li>
               <li className="my-2">
                 <Link
-                  to={"/about"} onClick={closeNav}
+                  to={"/about"}
+                  onClick={closeNav}
                   className="text-gray-800 hover:text-red-600 font-semibold text-xl"
                 >
                   About
@@ -186,7 +185,8 @@ const Header = ({ datas, setRestaurants }) => {
               </li>
               <li className="my-2">
                 <Link
-                  to={"/contact"} onClick={closeNav}
+                  to={"/contact"}
+                  onClick={closeNav}
                   className="text-gray-800 hover:text-red-600 font-semibold text-xl"
                 >
                   Contact
