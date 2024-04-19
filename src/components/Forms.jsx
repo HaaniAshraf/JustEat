@@ -19,7 +19,7 @@ function Forms() {
   const navigate = useNavigate();
   const handleSubmit = (data) => {
     dispatch(saveUserDetails(data));
-    navigate("/");
+    navigate("/home");
   };
   return (
     <div className="flex items-center justify-center">

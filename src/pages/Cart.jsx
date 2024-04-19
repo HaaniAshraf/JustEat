@@ -25,7 +25,7 @@ const Cart = () => {
           <p className="text-red-600 font-bold text-xl">Oops!!</p>
           <p>Your cart is empty</p>
           <p>Please add items...</p>
-          <Link to="/">
+          <Link to="/home">
             <button className="mt-4 border-red-600 hover:bg-red-500 hover:border-red-600 hover:text-white border-2 text-black font-bold py-2 px-4 rounded">
               Back to Home
             </button>

@@ -65,7 +65,7 @@ const Header = ({ datas, setRestaurants }) => {
       </div>
       <div>
         <ul className="sm:flex sm:text-xl hidden items-center justify-center sm:gap-6 sm:pr-1 md:gap-8 font-semibold">
-          <Link to={"/"}>
+          <Link to={"/home"}>
             <li
               className={location.pathname === "/" ? "active-link" : "nav-item"}
             >
@@ -94,7 +94,7 @@ const Header = ({ datas, setRestaurants }) => {
                 <div className="">
                   <AiOutlineShoppingCart />
                 </div>
-                <span className="absolute -top-2 md:-top-2 left-3 bg-red-600 h-3 w-3 md:h-4 md:w-4 md:text-xs rounded-full flex items-center justify-center text-white text-xxs">
+                <span className="absolute -top-2 md:-top-2 left-4 bg-red-600 h-3 w-3 md:h-4 md:w-4 md:text-xs rounded-full flex items-center justify-center text-white text-xxs">
                   {cartItems.length}
                 </span>
               </div>
@@ -142,7 +142,7 @@ const Header = ({ datas, setRestaurants }) => {
             <ul className="flex flex-col items-center justify-center bg-white absolute top-16 left-0 w-full py-4 border-b border-gray-200">
               <li className="my-2">
                 <Link
-                  to={"/"}
+                  to={"/home"}
                   onClick={closeNav}
                   className="text-gray-800 hover:text-red-600 font-semibold text-xl"
                 >

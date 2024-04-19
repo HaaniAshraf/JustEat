@@ -38,7 +38,7 @@ class UserCard extends Component {
     const { usersInfo } = this.state;
 
     const shimmers = [];
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
       shimmers.push(<Shimmer key={i} />);
     }
 

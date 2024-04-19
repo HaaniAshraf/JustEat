@@ -18,10 +18,10 @@ function App() {
     <Provider store={Store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/" element={<Signup />} />
           <Route path="/" element={<UserLayout />}>
             <Route path="*" element={<Error />} />
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route
               path="/about"
@@ -29,7 +29,7 @@ function App() {
                 <Suspense
                   fallback={
                     <div className="py-40 font-bold text-2xl text-center">
-                      Loading Grocery...
+                      Loading
                     </div>
                   }
                 >
