@@ -5,7 +5,7 @@
 
 @layer components {
   .nav-item {
-    @apply cursor-pointer hover:text-red-600 duration-100 md:text-xl flex flex-col items-center justify-center md:leading-5;
+    @apply cursor-pointer hover:text-red-600 duration-100 md:text-2xl flex flex-col items-center justify-center;
   }
 
   .filter-button{
@@ -13,7 +13,7 @@
   }
 
   .active-link {
-    @apply border-b-2 border-red-600 duration-200 text-red-600 md:text-xl
+    @apply border-b-2 border-red-600 duration-200 text-red-600 md:text-2xl
   }
 
   .coupon{

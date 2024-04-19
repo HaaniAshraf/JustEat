@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import { SignupValidation } from "../utils/SignupValidation";
 import Logo from "../assets/justEat.png";
+import { useNavigate } from "react-router-dom";
+import { saveUserDetails } from "../redux/reducers/userReducer";
 
 const initialValues = {
   name: "",
@@ -14,9 +16,10 @@ const initialValues = {
 
 function Forms() {
   const dispatch = useDispatch();
-  const handleSubmit = (values, { setSubmitting }) => {
-    dispatch({ type: "SAVE_USER_DETAILS", payload: values });
-    setSubmitting(false);
+  const navigate = useNavigate();
+  const handleSubmit = (data) => {
+    dispatch(saveUserDetails(data));
+    navigate("/");
   };
   return (
     <div className="flex items-center justify-center">

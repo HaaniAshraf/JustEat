@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { MdOutlineWifi, MdOutlineWifiOff, MdOutlineHome } from "react-icons/md";
-import { HiOutlineShoppingBag } from "react-icons/hi";
+import { CgProfile } from "react-icons/cg";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
 import { RiContactsBook2Line } from "react-icons/ri";
@@ -70,21 +70,17 @@ const Header = ({ datas, setRestaurants }) => {
               className={location.pathname === "/" ? "active-link" : "nav-item"}
             >
               <div>
-                <MdOutlineHome className="sm:block md:hidden" />
+                <MdOutlineHome className="font-bold" />
               </div>
-              <span className="sm:hidden md:block">Home</span>
             </li>
           </Link>
-          <Link to={"/grocery"}>
+          <Link to={"/profile"}>
             <li
-              className={
-                location.pathname === "/grocery" ? "active-link" : "nav-item"
-              }
+              className={location.pathname === "/profile" ? "active-link" : "nav-item"}
             >
               <div>
-                <HiOutlineShoppingBag className="sm:block md:hidden" />
+                <CgProfile />
               </div>
-              <span className="sm:hidden md:block">Grocery</span>
             </li>
           </Link>
           <Link to={"/cart"}>
@@ -95,14 +91,13 @@ const Header = ({ datas, setRestaurants }) => {
               }
             >
               <div className="flex items-center gap-2 relative">
-                <div className="sm:block md:hidden">
+                <div className="">
                   <AiOutlineShoppingCart />
                 </div>
                 <span className="absolute -top-2 md:-top-2 left-3 bg-red-600 h-3 w-3 md:h-4 md:w-4 md:text-xs rounded-full flex items-center justify-center text-white text-xxs">
                   {cartItems.length}
                 </span>
               </div>
-              <span className="sm:hidden md:block">Cart</span>
             </li>
           </Link>
           <Link to={"/about"}>
@@ -113,9 +108,8 @@ const Header = ({ datas, setRestaurants }) => {
               }
             >
               <div>
-                <BsInfoCircle className="sm:block md:hidden" />
+                <BsInfoCircle className="" />
               </div>
-              <span className="sm:hidden md:block">About</span>
             </li>
           </Link>
           <Link to={"/contact"}>
@@ -124,10 +118,9 @@ const Header = ({ datas, setRestaurants }) => {
                 location.pathname === "/contact" ? "active-link" : "nav-item"
               }
             >
-              <div className="sm:block md:hidden">
+              <div className="">
                 <RiContactsBook2Line />
               </div>
-              <span className="sm:hidden md:block">Contact</span>
             </li>
           </Link>
           <li className={`${onlineStatus ? "text-green-500" : "text-red-600"}`}>
@@ -158,11 +151,11 @@ const Header = ({ datas, setRestaurants }) => {
               </li>
               <li className="my-2">
                 <Link
-                  to={"/grocery"}
+                  to={"/profile"}
                   onClick={closeNav}
                   className="text-gray-800 hover:text-red-600 font-semibold text-xl"
                 >
-                  Grocery
+                  Profile
                 </Link>
               </li>
               <li className="my-2">

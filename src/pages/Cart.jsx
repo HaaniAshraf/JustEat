@@ -3,7 +3,7 @@ import { MdOutlineClear } from "react-icons/md";
 import { useSelector } from "react-redux";
 import DishesCard from "../components/DishesCard";
 import { useDispatch } from "react-redux";
-import { clearCart } from "../utils/cartSlice";
+import { clearCart } from "../redux/reducers/cartReducer";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
@@ -19,7 +19,7 @@ const Cart = () => {
 
   return (
     <div className="pt-28 pb-40 px-10">
-      <h1 className="text-center font-bold text-xl sm:text-2xl">Your Cart</h1>
+      <h1 className="sm:text-3xl text-2xl font-bold mb-4 text-center">Your Cart</h1>
       {cartItems.length === 0 ? (
         <div className="text-center mt-8">
           <p className="text-red-600 font-bold text-xl">Oops!!</p>

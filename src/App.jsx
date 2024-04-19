@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
-import About from "./pages/About";
+import Profile from "./pages/Profile";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Error from "./components/Error";
@@ -9,24 +9,22 @@ import RestaurantInfo from "./pages/RestaurantInfo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UserLayout from "./layout/userLayout";
 import { Provider } from "react-redux";
-import appStore from "./utils/appStore";
+import Store from './redux/store'
 
-const Grocery = lazy(() => import("./pages/Grocery"));
+const About = lazy(() => import("./pages/About"));
 
 function App() {
   return (
-    <Provider store={appStore}>
+    <Provider store={Store}>
       <BrowserRouter>
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<UserLayout />}>
-            <Route path="/" element={<Home />} />
             <Route path="*" element={<Error />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
             <Route
-              path="/grocery"
+              path="/about"
               element={
                 <Suspense
                   fallback={
@@ -35,10 +33,12 @@ function App() {
                     </div>
                   }
                 >
-                  <Grocery />
+                  <About />
                 </Suspense>
               }
             />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/restaurant/:resId" element={<RestaurantInfo />} />
           </Route>
         </Routes>

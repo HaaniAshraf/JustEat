@@ -3,7 +3,7 @@ import { IoIosArrowDropdown } from "react-icons/io";
 import { IoStar } from "react-icons/io5";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addItem } from "../utils/cartSlice";
+import { addItem } from "../redux/reducers/cartReducer";
 
 const DishAccordion = ({ title, dishes }) => {
   // State to manage whether to show the items or not

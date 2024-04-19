@@ -6,7 +6,7 @@ class About extends Component {
   render() {
     return (
       <div className="pt-28 pb-44 px-36">
-         <h1 className="text-3xl font-bold mb-4 text-center">About Us</h1>
+         <h1 className="sm:text-3xl text-2xl font-bold mb-4 text-center">About Us</h1>
           <h2 className="text-2xl font-bold mb-2 mt-10 border-b-2 border-gray-300 w-32 pb-1">
             Our Story
           </h2>
@@ -21,7 +21,7 @@ class About extends Component {
             (where part­ners do their own deliv­ery) with deliv­ery ser­vice 
             (for part­ners with­out their own deliv­ery capa­bil­i­ties).
           </p>
-        <UserCard usernames={["HaaniAshraf", "yadukrishnan0"]} />
+        <UserCard usernames={["HaaniAshraf", "yadukrishnan0","favas17"]} />
       </div>
     );
   }

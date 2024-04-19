@@ -1,7 +1,7 @@
 import React from "react";
 import { IoStar } from "react-icons/io5";
 import { useDispatch } from "react-redux";
-import { removeItem } from "../utils/cartSlice";
+import { removeItem } from "../redux/reducers/cartReducer";
 
 const DishesCard = ({ dishIndex, dish, showRemoveButton }) => {
   // Initializing dispatch function to dispatch actions
